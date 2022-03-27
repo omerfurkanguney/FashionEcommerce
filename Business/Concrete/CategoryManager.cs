@@ -26,7 +26,7 @@ namespace Business.Concrete
 
         public IResult Delete(int categoryId)
         {
-            var result = _categoryDal.Get(d => d.CategoryId == categoryId);
+            var result = _categoryDal.Get(c => c.CategoryId == categoryId);
             _categoryDal.Delete(result);
             return new SuccessResult(CategoryMessages.CategoryDeleted);
         }
