@@ -10,3 +10,8 @@ C:\Users\omerg\source\repos\FashionEcommerce\DataAccess\obj\Debug\net6.0\DataAcc
 C:\Users\omerg\source\repos\FashionEcommerce\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
 C:\Users\omerg\source\repos\FashionEcommerce\DataAccess\obj\Debug\net6.0\DataAccess.pdb
 C:\Users\omerg\source\repos\FashionEcommerce\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
+C:\Users\omerg\source\repos\FashionEcommerce\DataAccess\bin\Debug\net6.0\Core.dll
+C:\Users\omerg\source\repos\FashionEcommerce\DataAccess\bin\Debug\net6.0\Entities.dll
+C:\Users\omerg\source\repos\FashionEcommerce\DataAccess\bin\Debug\net6.0\Entities.pdb
+C:\Users\omerg\source\repos\FashionEcommerce\DataAccess\bin\Debug\net6.0\Core.pdb
+C:\Users\omerg\source\repos\FashionEcommerce\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CopyComplete
