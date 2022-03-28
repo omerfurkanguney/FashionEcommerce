@@ -39,7 +39,7 @@ namespace Business.Concrete
 
         public IDataResult<Size> GetById(int sizeId)
         {
-            return new SuccessDataResult<Size>(_sizeDal.Get(s =>s.SizeId == sizeId));
+            return new SuccessDataResult<Size>(_sizeDal.Get(s =>s.SizeId == sizeId),SizeMessages.SizeListed);
         }
 
         public IResult Update(Size size)

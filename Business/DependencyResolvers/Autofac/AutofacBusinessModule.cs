@@ -18,14 +18,18 @@ namespace Business.DependencyResolvers.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<CategoryManager>().As<ICategoryService>();
-            builder.RegisterType<EfCategoryDal>().As<ICategoryDal>();
+            //.SingleInstance(); bak
+            builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
+            builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
 
-            builder.RegisterType<ColorManager>().As<IColorService>();
-            builder.RegisterType<EfColorDal>().As<IColorDal>();
+            builder.RegisterType<ColorManager>().As<IColorService>().SingleInstance();
+            builder.RegisterType<EfColorDal>().As<IColorDal>().SingleInstance();
 
-            builder.RegisterType<SizeManager>().As<ISizeService>();
-            builder.RegisterType<EfSizeDal>().As<ISizeDal>();
+            builder.RegisterType<SizeManager>().As<ISizeService>().SingleInstance();
+            builder.RegisterType<EfSizeDal>().As<ISizeDal>().SingleInstance();
+
+            builder.RegisterType<GenderManager>().As<IGenderService>().SingleInstance();
+            builder.RegisterType<EfGenderDal>().As<IGenderDal>().SingleInstance();
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
