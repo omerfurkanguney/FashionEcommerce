@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Constants
 {
-    public class ColorMessages
+    public static class ColorMessages
     {
         public static string ColorAdded = "Renk Eklendi";
         public static string ColorDeleted = "Renk Silindi";

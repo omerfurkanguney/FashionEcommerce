@@ -24,6 +24,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<ColorManager>().As<IColorService>();
             builder.RegisterType<EfColorDal>().As<IColorDal>();
 
+            builder.RegisterType<SizeManager>().As<ISizeService>();
+            builder.RegisterType<EfSizeDal>().As<ISizeDal>();
+
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
