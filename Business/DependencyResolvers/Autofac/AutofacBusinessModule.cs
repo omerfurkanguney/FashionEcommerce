@@ -31,6 +31,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<GenderManager>().As<IGenderService>().SingleInstance();
             builder.RegisterType<EfGenderDal>().As<IGenderDal>().SingleInstance();
 
+            builder.RegisterType<FitManager>().As<IFitService>().SingleInstance();
+            builder.RegisterType<EfFitDal>().As<IFitDal>().SingleInstance();
+
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
