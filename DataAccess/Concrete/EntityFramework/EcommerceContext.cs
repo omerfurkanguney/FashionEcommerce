@@ -34,5 +34,6 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Gender>? Genders { get; set; }
         public DbSet<Fit>? Fits { get; set; }
         public DbSet<Status>? Statuses { get; set; }
+        public DbSet<City>? Cities { get; set; }
     }
 }
