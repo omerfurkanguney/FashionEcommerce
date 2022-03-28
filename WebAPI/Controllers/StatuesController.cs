@@ -7,18 +7,18 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SizesController : ControllerBase
+    public class StatuesController : ControllerBase
     {
-        ISizeService _sizeService;
-        public SizesController(ISizeService sizeService)
+        IStatusService _statusService;
+        public StatuesController(IStatusService statusService)
         {
-            _sizeService = sizeService;
+            _statusService = statusService;
         }
 
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _sizeService.GetAll();
+            var result = _statusService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -27,9 +27,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getbyid")]
-        public IActionResult GetById(int sizeId)
+        public IActionResult GetById(int statusId)
         {
-            var result = _sizeService.GetById(sizeId);
+            var result = _statusService.GetById(statusId);
             if (result.Success)
             {
                 return Ok(result);
@@ -38,9 +38,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Size size)
+        public IActionResult Add(Status status)
         {
-            var result = _sizeService.Add(size);
+            var result = _statusService.Add(status);
             if (result.Success)
             {
                 return Ok(result);
@@ -49,9 +49,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete("delete")]
-        public IActionResult Delete(Size size)
+        public IActionResult Delete(Status status)
         {
-            var result = _sizeService.Delete(size);
+            var result=_statusService.Delete(status);
             if (result.Success)
             {
                 return Ok(result);
@@ -60,14 +60,18 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut("update")]
-        public IActionResult Update(Size size)
+        public IActionResult Update(Status status)
         {
-            var result = _sizeService.Update(size);
+            var result = _statusService.Update(status);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
         }
+
+
+
+
     }
 }

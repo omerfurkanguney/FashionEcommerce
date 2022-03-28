@@ -14,7 +14,7 @@ namespace Business.Abstract
         IDataResult<Size> GetById(int sizeId);
         IResult Add(Size size);
         IResult Update(Size size);
-        IResult Delete(int sizeId);
+        IResult Delete(Size size);
 
     }
 }

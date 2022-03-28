@@ -34,6 +34,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<FitManager>().As<IFitService>().SingleInstance();
             builder.RegisterType<EfFitDal>().As<IFitDal>().SingleInstance();
 
+            builder.RegisterType<StatusManager>().As<IStatusService>().SingleInstance();
+            builder.RegisterType<EfStatusDal>().As<IStatusDal>().SingleInstance();
+
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()

@@ -25,10 +25,10 @@ namespace Business.Concrete
             return new SuccessResult(SizeMessages.SizeAdded);
         }
 
-        public IResult Delete(int sizeId)
+        public IResult Delete(Size size)
         {
-            var result = _sizeDal.Get(s => s.SizeId == sizeId);
-            _sizeDal.Delete(result);
+            //var result = _sizeDal.Get(s => s.SizeId == sizeId);
+            _sizeDal.Delete(size);
             return new SuccessResult(SizeMessages.SizeDeleted);
         }
 
