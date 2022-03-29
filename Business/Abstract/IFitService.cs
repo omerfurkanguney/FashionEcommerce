@@ -14,6 +14,6 @@ namespace Business.Abstract
         IDataResult<Fit> GetById(int fitId);
         IResult Add(Fit fit);
         IResult Update(Fit fit);
-        IResult Delete(int fitId);
+        IResult Delete(Fit fit);
     }
 }

@@ -49,7 +49,7 @@ namespace WebAPI.Controllers
         }
 
 
-        [HttpDelete("delete")]
+        [HttpPost("delete")]
         public IActionResult Delete(County county)
         {
             var result = _countyService.Delete(county);
@@ -61,7 +61,7 @@ namespace WebAPI.Controllers
         }
 
 
-        [HttpPut("update")]
+        [HttpPost("update")]
         public IActionResult Update(County county)
         {
             var result = _countyService.Update(county);

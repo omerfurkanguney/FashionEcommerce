@@ -49,10 +49,10 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpDelete("delete")]
-        public IActionResult Delete(int genderId)
+        [HttpPost("delete")]
+        public IActionResult Delete(Gender gender)
         {
-            var result = _genderService.Delete(genderId);
+            var result = _genderService.Delete(gender);
             if (result.Success)
             {
                 return Ok(result);
@@ -60,7 +60,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPut("update")]
+        [HttpPost("update")]
         public IActionResult Update(Gender gender)
         {
             var result = _genderService.Update(gender);

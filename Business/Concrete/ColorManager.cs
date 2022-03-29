@@ -25,12 +25,10 @@ namespace Business.Concrete
             return new SuccessResult(ColorMessages.ColorAdded);
         }
 
-        public IResult Delete(int colorId)
-        {
-            var result = _colorDal.Get(c => c.ColorId == colorId);
-            _colorDal.Delete(result);
-            return new SuccessResult(ColorMessages.ColorDeleted);
-            
+        public IResult Delete(Color color)
+        {         
+            _colorDal.Delete(color);
+            return new SuccessResult(ColorMessages.ColorDeleted);        
         }
 
         public IDataResult<List<Color>> GetAll()

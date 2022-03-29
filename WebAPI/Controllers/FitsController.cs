@@ -49,10 +49,10 @@ namespace WebAPI.Controllers
         }
 
 
-        [HttpDelete("delete")]
-        public IActionResult Delete(int fitId)
+        [HttpPost("delete")]
+        public IActionResult Delete(Fit fit)
         {
-            var result = _fitService.Delete(fitId);
+            var result = _fitService.Delete(fit);
             if (result.Success)
             {
                 return Ok(result);
@@ -60,7 +60,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPut("update")]
+        [HttpPost("update")]
         public IActionResult Update(Fit fit)
         {
             var result = _fitService.Update(fit);

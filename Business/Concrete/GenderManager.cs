@@ -25,10 +25,9 @@ namespace Business.Concrete
             return new SuccessResult(GenderMessages.GenderAdded);
         }
 
-        public IResult Delete(int genderId)
+        public IResult Delete(Gender gender)
         {
-            var result = _genderDal.Get(g => g.GenderID == genderId);
-            _genderDal.Delete(result);
+            _genderDal.Delete(gender);
             return new SuccessResult(GenderMessages.GenderDeleted);
         }
 

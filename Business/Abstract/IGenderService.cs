@@ -14,6 +14,6 @@ namespace Business.Abstract
         IDataResult<Gender> GetById(int genderId);
         IResult Add(Gender gender);
         IResult Update(Gender gender);
-        IResult Delete(int genderId);
+        IResult Delete(Gender gender);
     }
 }

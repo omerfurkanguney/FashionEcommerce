@@ -27,7 +27,6 @@ namespace Business.Concrete
 
         public IResult Delete(Size size)
         {
-            //var result = _sizeDal.Get(s => s.SizeId == sizeId);
             _sizeDal.Delete(size);
             return new SuccessResult(SizeMessages.SizeDeleted);
         }

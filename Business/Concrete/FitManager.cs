@@ -24,10 +24,9 @@ namespace Business.Concrete
             return new SuccessResult(FitMessages.FitAdded);
         }
 
-        public IResult Delete(int fitId)
-        {
-            var result = _fitDal.Get(f=>f.FitId == fitId);
-            _fitDal.Delete(result);
+        public IResult Delete(Fit fit)
+        {          
+            _fitDal.Delete(fit);
             return new SuccessResult(FitMessages.FitDeleted);
         }
 

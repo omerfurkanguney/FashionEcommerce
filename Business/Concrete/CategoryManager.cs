@@ -24,10 +24,10 @@ namespace Business.Concrete
             return new SuccessResult(CategoryMessages.CategoryAdded);
         }
 
-        public IResult Delete(int categoryId)
+        public IResult Delete(Category category)
         {
-            var result = _categoryDal.Get(c => c.CategoryId == categoryId);
-            _categoryDal.Delete(result);
+            //var result = _categoryDal.Get(c => c.CategoryId == categoryId);
+            _categoryDal.Delete(category);
             return new SuccessResult(CategoryMessages.CategoryDeleted);
         }
 
