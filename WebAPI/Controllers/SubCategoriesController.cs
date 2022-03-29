@@ -7,28 +7,28 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CitiesController : ControllerBase
+    public class SubCategoriesController : ControllerBase
     {
-        ICityService _cityService;
-        public CitiesController(ICityService cityService)
+        ISubCategoryService _subCategoryService;
+        public SubCategoriesController(ISubCategoryService subCategoryService)
         {
-            _cityService = cityService;
+            _subCategoryService =  subCategoryService;
         }
 
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _cityService.GetAll();
+            var result = _subCategoryService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
             }
-            return BadRequest(result);  
+            return BadRequest(result);
         }
         [HttpGet("getbyid")]
-        public IActionResult GetById(int cityId)
+        public IActionResult GetById(int subCategoryId)
         {
-            var result = _cityService.GetById(cityId);
+            var result = _subCategoryService.GetById(subCategoryId);
             if (result.Success)
             {
                 return Ok(result);
@@ -37,9 +37,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(City city)
+        public IActionResult Add(SubCategory subCategory)
         {
-            var result = _cityService.Add(city);
+            var result = _subCategoryService.Add(subCategory);
             if (result.Success)
             {
                 return Ok(result);
@@ -48,9 +48,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("delete")]
-        public IActionResult Delete(City city)
+        public IActionResult Delete(SubCategory subCategory)
         {
-            var result = _cityService.Delete(city);
+            var result = _subCategoryService.Delete(subCategory);
             if (result.Success)
             {
                 return Ok(result);
@@ -59,9 +59,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(City city)
+        public IActionResult Update(SubCategory subCategory)
         {
-            var result = _cityService.Update(city);
+            var result = _subCategoryService.Update(subCategory);
             if (result.Success)
             {
                 return Ok(result);

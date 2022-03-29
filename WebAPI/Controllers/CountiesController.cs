@@ -64,7 +64,7 @@ namespace WebAPI.Controllers
         [HttpPut("update")]
         public IActionResult Update(County county)
         {
-            var result = _countyService.Add(county);
+            var result = _countyService.Update(county);
             if (result.Success)
             {
                 return Ok(result);

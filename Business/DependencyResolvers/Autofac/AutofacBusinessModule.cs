@@ -43,6 +43,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<CountyManager>().As<ICountyService>().SingleInstance();
             builder.RegisterType<EfCountyDal>().As<ICountyDal>().SingleInstance();
 
+            builder.RegisterType<SubCategoryManager>().As<ISubCategoryService>().SingleInstance();
+            builder.RegisterType<EfSubCategoryDal>().As<ISubCategoryDal>().SingleInstance();
+
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
