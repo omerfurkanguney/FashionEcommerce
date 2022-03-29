@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Entities.Concrete;
+using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -40,5 +41,8 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<BaseProduct>? BaseProducts { get; set; }
         public DbSet<Product>? Products { get; set; }
         public DbSet<Stock>? Stocks { get; set; }
+        public DbSet<AdminOperationClaim>? AdminOperationClaims { get; set; }
+        public DbSet<AdminClaim>? AdminClaims { get; set; }
+        public DbSet<Admin>? Admins { get; set; }
     }
 }
