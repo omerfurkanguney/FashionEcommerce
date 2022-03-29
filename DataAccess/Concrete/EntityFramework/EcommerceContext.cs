@@ -37,5 +37,8 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<City>? Cities { get; set; }
         public DbSet<County>? Counties { get; set; }
         public DbSet<SubCategory>? SubCategories { get; set; }
+        public DbSet<BaseProduct>? BaseProducts { get; set; }
+        public DbSet<Product>? Products { get; set; }
+        public DbSet<Stock>? Stocks { get; set; }
     }
 }

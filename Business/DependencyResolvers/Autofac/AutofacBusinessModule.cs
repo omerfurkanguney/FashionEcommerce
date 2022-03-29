@@ -46,6 +46,15 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<SubCategoryManager>().As<ISubCategoryService>().SingleInstance();
             builder.RegisterType<EfSubCategoryDal>().As<ISubCategoryDal>().SingleInstance();
 
+            builder.RegisterType<BaseProductManager>().As<IBaseProductService>().SingleInstance();
+            builder.RegisterType<EfBaseProductDal>().As<IBaseProductDal>().SingleInstance();
+
+            builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();
+            builder.RegisterType<EfProductDal>().As<IProductDal>().SingleInstance();
+
+            builder.RegisterType<StockManager>().As<IStockService>().SingleInstance();
+            builder.RegisterType<EfStockDal>().As<IStockDal>().SingleInstance();
+
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
