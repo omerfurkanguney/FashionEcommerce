@@ -17,5 +17,7 @@ namespace Business.Abstract
 
         IResult AdminExists(string email);
         IDataResult<AccessToken> CreateAccessToken(Admin admin);
+
+      
     }
 }

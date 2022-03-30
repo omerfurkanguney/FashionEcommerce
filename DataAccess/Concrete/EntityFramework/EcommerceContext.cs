@@ -18,15 +18,16 @@ namespace DataAccess.Concrete.EntityFramework
 
         protected override void OnModelCreating(ModelBuilder modelbuilder)
         {
-            //modelbuilder.Entity<AnonimMusteriler>().HasBaseType<Kullanicilar>();
-            // modelbuilder.Entity<AnonimMusteriler>().HasKey(am => am.KullaniciId);
-            // modelbuilder.Entity<AnonimMusteriler>().HasOne(am => am.Kullanicilar).WithOne(k => k.AnonimMusteriler).HasForeignKey<AnonimMusteriler>(am => am.KullaniciId);
+            modelbuilder.Entity<Customer>().ToTable("customers");
 
+            //modelbuilder.Entity<Customer>().HasBaseType<User>();
+            //modelbuilder.Entity<User>().HasDiscriminator<string>("user_type").HasValue<User>("blog_base").HasValue<Customer>("user_customer");
+            //modelbuilder.Entity<Customer>().HasKey(c => c.UserId);
 
-            //modelbuilder.Entity<Kullanicilar>().HasOne(p => p.AnonimMusteriler).WithOne(s => s.Kullanicilar).HasForeignKey<AnonimMusteriler>(e => e.KullaniciId);
-            //modelbuilder.Entity<AnonimMusteriler>().HasKey(s => s.KullaniciId);          
-            // modelbuilder.Entity<AnonimMusteriler>().HasOne(p => p.Kullanicilar).WithOne(s => s.AnonimMusteriler).HasForeignKey<Kullanicilar>(e => e.KullaniciId);
-            // modelbuilder.Entity<Kullanicilar>().HasOne<AnonimMusteriler>(p => p.AnonimMusteriler).WithOne(s => s.Kullanicilar);
+            //modelbuilder.Entity<Customer>().HasOne(c => c.user).WithOne(a => a.customer).HasForeignKey<Customer>(c => c.UserId);
+            //modelbuilder.Entity<User>().HasOne(u => u.customer).WithOne(c=>c.user).HasForeignKey<User>(u => u.UserId);
+
+          
         }
 
         public DbSet<Category>? Categories { get; set; }
@@ -44,5 +45,7 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<AdminOperationClaim>? AdminOperationClaims { get; set; }
         public DbSet<AdminClaim>? AdminClaims { get; set; }
         public DbSet<Admin>? Admins { get; set; }
+        public DbSet<User>? Users { get; set; }
+        //public DbSet<Customer>? Customers { get; set; }
     }
 }
