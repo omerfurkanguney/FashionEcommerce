@@ -24,5 +24,13 @@ namespace DataAccess.Concrete.EntityFramework
 
             }
         }
+
+        public int GetCount()
+        {
+            using (EcommerceContext context = new EcommerceContext())
+            {
+                return context.Admins.Count();
+            }
+        }
     }
 }

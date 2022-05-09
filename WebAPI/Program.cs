@@ -49,13 +49,14 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    //app.UseDeveloperExceptionPage();//?
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.ConfigureCustomExceptionMiddleware();
+app.ConfigureCustomExceptionMiddleware();//?
 
-app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader());
+app.UseCors(builder => builder.WithOrigins("http://localhost:3000").AllowAnyHeader());
 
 app.UseHttpsRedirection();
 

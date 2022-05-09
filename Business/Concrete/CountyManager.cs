@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,11 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<County>(_countyDal.Get(c=>c.CountyId == countyId), CountyMessages.CountyListed);
 
+        }
+
+        public IDataResult<List<CountyDetailDto>> GetCountyDetails()
+        {
+            return new SuccessDataResult<List<CountyDetailDto>>(_countyDal.GetCountyDetails());
         }
 
         public IResult Update(County county)

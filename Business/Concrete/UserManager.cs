@@ -25,5 +25,11 @@ namespace Business.Concrete
         {
             return _userDal.Get(u => u.customer.Email == email);
         }
+
+        public int GetCount()
+        {
+
+            return _userDal.GetCount();
+        }
     }
 }

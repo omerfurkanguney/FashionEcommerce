@@ -11,5 +11,14 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfUserDal:EfEntityRepositoryBase<User,EcommerceContext>,IUserDal
     {
+        public int GetCount()
+        {
+            using (EcommerceContext context = new EcommerceContext())
+            {
+                return context.Users.Count();
+                
+
+            }
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿
 using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace Business.Abstract
     {
         IDataResult<List<County>>GetAll();
         IDataResult<County> GetById(int countyId);
+        IDataResult<List<CountyDetailDto>> GetCountyDetails();
         IResult Add(County county);
         IResult Update(County county);
         IResult Delete(County county);

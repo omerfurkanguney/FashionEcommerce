@@ -12,5 +12,6 @@ namespace Business.Abstract
         List<AdminOperationClaim>GetClaims(Admin admin);
         void Add(Admin admin);
         Admin GetByMail(string email);
+        public int GetCount();
     }
 }

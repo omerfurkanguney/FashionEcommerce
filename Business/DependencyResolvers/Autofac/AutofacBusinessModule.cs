@@ -41,20 +41,23 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<CityManager>().As<ICityService>().SingleInstance();
             builder.RegisterType<EfCityDal>().As<ICityDal>().SingleInstance();
 
-            builder.RegisterType<CountyManager>().As<ICountyService>().SingleInstance();
-            builder.RegisterType<EfCountyDal>().As<ICountyDal>().SingleInstance();
+            builder.RegisterType<CountyManager>().As<ICountyService>();
+            builder.RegisterType<EfCountyDal>().As<ICountyDal>();
 
-            builder.RegisterType<SubCategoryManager>().As<ISubCategoryService>().SingleInstance();
-            builder.RegisterType<EfSubCategoryDal>().As<ISubCategoryDal>().SingleInstance();
+            builder.RegisterType<SubCategoryManager>().As<ISubCategoryService>();
+            builder.RegisterType<EfSubCategoryDal>().As<ISubCategoryDal>();
 
-            builder.RegisterType<BaseProductManager>().As<IBaseProductService>().SingleInstance();
-            builder.RegisterType<EfBaseProductDal>().As<IBaseProductDal>().SingleInstance();
+            builder.RegisterType<BaseProductManager>().As<IBaseProductService>();
+            builder.RegisterType<EfBaseProductDal>().As<IBaseProductDal>();
 
-            builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();
-            builder.RegisterType<EfProductDal>().As<IProductDal>().SingleInstance();
+            builder.RegisterType<ProductManager>().As<IProductService>();
+            builder.RegisterType<EfProductDal>().As<IProductDal>();
 
-            builder.RegisterType<StockManager>().As<IStockService>().SingleInstance();
-            builder.RegisterType<EfStockDal>().As<IStockDal>().SingleInstance();
+            builder.RegisterType<StockManager>().As<IStockService>();
+            builder.RegisterType<EfStockDal>().As<IStockDal>();
+
+            builder.RegisterType<AddressManager>().As<IAddressService>();
+            builder.RegisterType<EfAddressDal>().As<IAddressDal>();
 
             builder.RegisterType<AdminOperationClaimManager>().As<IAdminOperationClaimService>();
             builder.RegisterType<EfAdminOperationClaimDal>().As<IAdminOperationClaimDal>();
@@ -67,6 +70,7 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<UserManager>().As<IUserService>();
             builder.RegisterType<EfUserDal>().As<IUserDal>();
+        
 
             builder.RegisterType<UserAuthManager>().As<IUserAuthService>();
             //builder.RegisterType<JwtHelper>().As<ITokenHelper>();

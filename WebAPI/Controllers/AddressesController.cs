@@ -7,51 +7,39 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriesController : ControllerBase
+    public class AddressesController : ControllerBase
     {
-        ICategoryService _categoryService;
-
-        public CategoriesController(ICategoryService categoryService)
+        IAddressService _addressService;
+        public AddressesController(IAddressService addressService)
         {
-            _categoryService = categoryService; 
+            _addressService = addressService;
         }
 
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result=   _categoryService.GetAll();
+            var result = _addressService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
         }
-
         [HttpGet("getbyid")]
-        public IActionResult GetById(int categoryId)
+        public IActionResult GetById(int addressId)
         {
-            var result = _categoryService.GetById(categoryId);
+            var result = _addressService.GetById(addressId);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
         }
-
-        [HttpGet("getcount")]
-        public IActionResult GetCount()
-        {
-            var result = _categoryService.GetCount();
-           
-                return Ok(result);
-            
-        }
-
 
         [HttpPost("add")]
-        public IActionResult Add(Category category)
+        public IActionResult Add(Address address)
         {
-            var result = _categoryService.Add(category);
+            var result = _addressService.Add(address);
             if (result.Success)
             {
                 return Ok(result);
@@ -60,9 +48,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("delete")]
-        public IActionResult Delete(Category category)
+        public IActionResult Delete(Address address)
         {
-            var result = _categoryService.Delete(category);
+            var result = _addressService.Delete(address);
             if (result.Success)
             {
                 return Ok(result);
@@ -71,9 +59,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(Category category)
+        public IActionResult Update(Address address)
         {
-            var result = _categoryService.Update(category);
+            var result = _addressService.Update(address);
             if (result.Success)
             {
                 return Ok(result);

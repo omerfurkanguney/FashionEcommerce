@@ -11,5 +11,6 @@ namespace DataAccess.Abstract
     public interface IAdminDal:IEntityRepository<Admin>
     {
         List<AdminOperationClaim> GetClaims(Admin admin);
+        public int GetCount();
     }
 }

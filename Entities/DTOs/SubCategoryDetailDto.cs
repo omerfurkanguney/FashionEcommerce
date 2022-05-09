@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Concrete
+namespace Entities.DTOs
 {
-    public class Category:IEntity
+    public class SubCategoryDetailDto:IDto
     {
-        public int CategoryId { get; set; }
+        public int SubCategoryId { get; set; }
         public string? CategoryName { get; set; }
+        public string? SubCategoryName { get; set; }
     }
 }

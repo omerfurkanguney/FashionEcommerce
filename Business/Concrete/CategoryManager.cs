@@ -36,9 +36,18 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Category>>(_categoryDal.GetAll(), CategoryMessages.CategoryListed);
         }
 
+        
+
+
         public IDataResult<Category> GetById(int categoryId)
         {
-            return new SuccessDataResult<Category>(_categoryDal.Get(c => c.CategoryId == categoryId),ColorMessages.ColorListed);
+            return new SuccessDataResult<Category>(_categoryDal.Get(c => c.CategoryId == categoryId),CategoryMessages.CategoryListed);
+        }
+
+        public int GetCount()
+        {
+           
+            return _categoryDal.GetCount(); 
         }
 
         public IResult Update(Category category)

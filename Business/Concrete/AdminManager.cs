@@ -30,5 +30,10 @@ namespace Business.Concrete
         {
             return _adminDal.GetClaims(admin);
         }
+        public int GetCount()
+        {
+
+            return _adminDal.GetCount();
+        }
     }
 }

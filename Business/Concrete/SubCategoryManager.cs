@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,11 @@ namespace Business.Concrete
         public IDataResult<SubCategory> GetById(int subCategoryId)
         {
             return new SuccessDataResult<SubCategory>(_subCategoryDal.Get(sc => sc.SubCategoryId == subCategoryId), SubCategoryMessages.SubCategoryListed);
+        }
+
+        public IDataResult<List<SubCategoryDetailDto>> GetSubCategoryDetails()
+        {
+            return new SuccessDataResult<List<SubCategoryDetailDto>>(_subCategoryDal.GetSubCategoryDetails());
         }
 
         public IResult Update(SubCategory subCategory)

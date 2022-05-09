@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace Business.Abstract
     public interface ISubCategoryService
     {
         IDataResult<List<SubCategory>>GetAll();
+        IDataResult<List<SubCategoryDetailDto>> GetSubCategoryDetails();
         IDataResult<SubCategory> GetById(int subCategoryId);
         IResult Add(SubCategory subCategory);
         IResult Update(SubCategory subCategory);
