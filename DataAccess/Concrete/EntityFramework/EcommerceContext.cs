@@ -13,7 +13,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseNpgsql("Host=ecommerce-dtp.c6pthk5yf0zn.eu-central-1.rds.amazonaws.com;port=5432;Database=ecommerce_db;Username=postgres;Password=dtpomerdtp");
+         
 
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=FashionEcommerce;Trusted_Connection=true");
         }
