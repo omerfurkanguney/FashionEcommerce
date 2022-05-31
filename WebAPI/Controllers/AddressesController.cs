@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
+    //yorum satırı
     [Route("api/[controller]")]
     [ApiController]
     public class AddressesController : ControllerBase
