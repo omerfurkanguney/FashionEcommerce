@@ -70,7 +70,10 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<UserManager>().As<IUserService>();
             builder.RegisterType<EfUserDal>().As<IUserDal>();
-        
+
+            builder.RegisterType<PictureManager>().As<IPictureService>();
+            builder.RegisterType<EfPictureDal>().As<IPictureDal>();
+
 
             builder.RegisterType<UserAuthManager>().As<IUserAuthService>();
             //builder.RegisterType<JwtHelper>().As<ITokenHelper>();

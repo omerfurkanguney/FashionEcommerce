@@ -21,7 +21,8 @@ namespace DataAccess.Concrete.EntityFramework
                              on sc.CategoryId equals c.CategoryId
                              select new SubCategoryDetailDto
                              {
-                                 SubCategoryId = sc.CategoryId,
+                                 SubCategoryId = sc.SubCategoryId,
+                                 CategoryId = c.CategoryId,
                                  CategoryName = c.CategoryName,
                                  SubCategoryName = sc.SubCategoryName,
                              };

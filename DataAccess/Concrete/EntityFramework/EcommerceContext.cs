@@ -13,6 +13,8 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //optionsBuilder.UseNpgsql("Host=ecommerce-dtp.c6pthk5yf0zn.eu-central-1.rds.amazonaws.com;port=5432;Database=ecommerce_db;Username=postgres;Password=dtpomerdtp");
+
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=FashionEcommerce;Trusted_Connection=true");
         }
 
@@ -46,7 +48,10 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<AdminClaim>? AdminClaims { get; set; }
         public DbSet<Admin>? Admins { get; set; }
         public DbSet<User>? Users { get; set; }
-        //public DbSet<Customer>? Customers { get; set; }
+        
         public DbSet<Address>? Addresses { get; set; }
+        public DbSet<Picture>? Pictures { get; set; }
+
+        //public DbSet<Customer>? Customers { get; set; }
     }
 }

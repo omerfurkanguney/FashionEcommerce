@@ -15,6 +15,20 @@ namespace WebAPI.Controllers
             _subCategoryService =  subCategoryService;
         }
 
+
+        [HttpGet("getbycategory")]
+        public IActionResult GetByCategory(int categoryId)
+        {
+            var result = _subCategoryService.GetAllByCategoryId(categoryId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
+
+
         [HttpGet("getall")]
         public IActionResult GetAll()
         {

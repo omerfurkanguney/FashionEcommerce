@@ -19,6 +19,8 @@ namespace Business.Concrete
         {
             _subCategoryDal = subCategoryDal;
         }
+      
+
         public IResult Add(SubCategory subCategory)
         {
             _subCategoryDal.Add(subCategory);
@@ -36,6 +38,10 @@ namespace Business.Concrete
             return new SuccessDataResult<List<SubCategory>>(_subCategoryDal.GetAll(),SubCategoryMessages.SubCategoryListed );
         }
 
+        public IDataResult<List<SubCategory>> GetAllByCategoryId(int categoryId)
+        {
+            return new SuccessDataResult<List<SubCategory>>(_subCategoryDal.GetAll(p => p.CategoryId == categoryId));
+        }
         public IDataResult<SubCategory> GetById(int subCategoryId)
         {
             return new SuccessDataResult<SubCategory>(_subCategoryDal.Get(sc => sc.SubCategoryId == subCategoryId), SubCategoryMessages.SubCategoryListed);

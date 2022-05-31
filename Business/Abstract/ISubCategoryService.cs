@@ -13,6 +13,7 @@ namespace Business.Abstract
     {
         IDataResult<List<SubCategory>>GetAll();
         IDataResult<List<SubCategoryDetailDto>> GetSubCategoryDetails();
+        IDataResult<List<SubCategory>> GetAllByCategoryId(int id);
         IDataResult<SubCategory> GetById(int subCategoryId);
         IResult Add(SubCategory subCategory);
         IResult Update(SubCategory subCategory);
