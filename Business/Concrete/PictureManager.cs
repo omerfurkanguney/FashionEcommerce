@@ -49,7 +49,7 @@ namespace Business.Concrete
 
         }
 
-        public IDataResult<List<Picture>> GetAllImagesByCarId(int ProductId)
+        public IDataResult<List<Picture>> GetAllImagesByProductId(int ProductId)
         {
             return new SuccessDataResult<List<Picture>>(CheckIfDefaultImages(ProductId));
 

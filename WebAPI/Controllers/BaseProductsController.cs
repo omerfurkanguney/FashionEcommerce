@@ -36,6 +36,18 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+
+        [HttpGet("getbaseproductdetails")]
+        public IActionResult GetSubCategoryDetails()
+        {
+            var result = _baseProductService.GetBaseProductDetails();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpPost("add")]
         public IActionResult Add(BaseProduct baseProduct)
         {

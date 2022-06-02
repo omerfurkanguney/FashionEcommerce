@@ -10,7 +10,7 @@ namespace Business.Abstract
 {
     public interface IPictureService
     {
-        IDataResult<List<Picture>> GetAllImagesByCarId(int ProductId);
+        IDataResult<List<Picture>> GetAllImagesByProductId(int ProductId);
         IDataResult<List<Picture>> GetAll();
         IDataResult<Picture> GetById(int pictureId);
         IResult Add(Picture picture);
