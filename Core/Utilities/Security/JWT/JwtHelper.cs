@@ -28,11 +28,13 @@ namespace Core.Utilities.Security.JWT
             var jwt = CreateJwtSecurityToken(_tokenOptions, user, signingCredentials);
             var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
             var token = jwtSecurityTokenHandler.WriteToken(jwt);
+            
 
             return new AccessToken
             {
                 Token = token,
                 Expiration = _accessTokenExpiration
+           
             };
 
         }

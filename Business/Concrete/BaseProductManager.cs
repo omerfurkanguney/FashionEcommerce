@@ -41,6 +41,9 @@ namespace Business.Concrete
             return new SuccessDataResult<List<ProductDetailDto>>(_baseProductDal.GetBaseProductDetails());
         }
 
+        
+
+
         public IDataResult<BaseProduct> GetById(int baseProductId)
         {
             return new SuccessDataResult<BaseProduct>(_baseProductDal.Get(bp => bp.BaseProductId == baseProductId),BaseProductMessages.BaseProductListed);

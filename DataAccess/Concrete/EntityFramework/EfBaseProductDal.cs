@@ -24,9 +24,7 @@ namespace DataAccess.Concrete.EntityFramework
                              join g in context.Genders
                              on bp.GenderId equals g.GenderID                          
                              join c in context.Colors
-                             on p.ColorId equals c.ColorId
-                            
-                       
+                             on p.ColorId equals c.ColorId                 
                              select new ProductDetailDto
                              {
                                  BaseProductId = bp.BaseProductId,
@@ -39,11 +37,14 @@ namespace DataAccess.Concrete.EntityFramework
                                  Date = p.Date,                             
                                  ProductCode =  bp.ProductCode,
                                  ProductName = bp.ProductName,
+                                 BasePic = bp.BasePic,
                                  Description = bp.Description,
                                  
                              };
                 return result.ToList();
             }
         }
+
+       
     }
 }

@@ -11,6 +11,7 @@ namespace Entities.DTOs
     {
         public int ProductId { get; set; }
         public int BaseProductId { get; set; }
+        public int CategoryId { get; set; }
         public string? FitName { get; set; }
         public string? GenderName { get; set; }
         public string? ProductCode { get; set; }
@@ -20,5 +21,6 @@ namespace Entities.DTOs
         public DateTime Date { get; set; }
         public int Price { get; set; }
         public int Discount { get; set; }
+        public string BasePic { get; set; }
     }
 }

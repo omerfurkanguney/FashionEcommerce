@@ -13,6 +13,6 @@ namespace DataAccess.Abstract
     {
       
             List<ProductDetailDto> GetBaseProductDetails();
-        
+           
     }
 }

@@ -21,6 +21,7 @@ namespace Business.Concrete
             _userDal.Add(user);
         }
 
+        
         public User GetByMail(string email)
         {
             return _userDal.Get(u => u.customer.Email == email);

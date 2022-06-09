@@ -36,12 +36,13 @@ namespace Business.Concrete
             {
                 return new ErrorDataResult<User>("Kullanıcı bulunamadı");
             }
-
+           
             if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.customer.PasswordHash, userToCheck.customer.PasswordSalt))
             {
                 return new ErrorDataResult<User>("Parola hatası");
             }
 
+            
             return new SuccessDataResult<User>(userToCheck, "Başarılı giriş");
         }
 

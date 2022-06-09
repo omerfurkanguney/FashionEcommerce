@@ -16,6 +16,7 @@ namespace Entities.Concrete
         public string? ProductCode { get; set; }
         public string? ProductName { get; set; }
         public string? Description { get; set; }
+        public string? BasePic { get; set; }
 
 
     }
