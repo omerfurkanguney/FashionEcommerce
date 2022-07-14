@@ -16,6 +16,6 @@ namespace Business.Abstract
         IResult Delete(AdminOperationClaim adminOperationClaim);
         IResult Update(AdminOperationClaim adminOperationClaim);
 
-        IResult Add1(AdminOperationClaim adminOperationClaim); 
+       
     }
 }

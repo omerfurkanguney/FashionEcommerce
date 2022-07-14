@@ -41,7 +41,7 @@ namespace WebAPI.Controllers
         [HttpPost("add")]
         public IActionResult Add(AdminOperationClaim adminOperationClaim)
         {
-            var result = _claimService.Add1(adminOperationClaim);
+            var result = _claimService.Add(adminOperationClaim);
             if (result.Success)
             {
                 return Ok(result);

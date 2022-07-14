@@ -57,7 +57,7 @@ namespace Business.Concrete
 
         public IDataResult<Picture> GetById(int Id)
         {
-            return new SuccessDataResult<Picture>(_pictureDal.Get(p => p.PictureId == Id));//ProductId ye göre getirme lazım olabilir.
+            return new SuccessDataResult<Picture>(_pictureDal.Get(p => p.PictureId == Id));
 
         }
 

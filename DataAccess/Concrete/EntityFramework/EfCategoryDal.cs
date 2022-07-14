@@ -17,11 +17,7 @@ namespace DataAccess.Concrete.EntityFramework
             using (EcommerceContext context = new EcommerceContext())
             {
                 return context.Categories.Count();
-                //var result = (from c in context.Categories                           
-                //             select c).Count();
-                //return result.CompareTo(0);
-                        
-                
+              
             }
         }
     }

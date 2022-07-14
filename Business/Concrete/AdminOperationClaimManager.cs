@@ -27,17 +27,6 @@ namespace Business.Concrete
             return new SuccessResult(ClaimMessages.ClaimAdded);
         }
 
-        public IResult Add1(AdminOperationClaim adminOperationClaim)
-        {
-            using (EcommerceContext context = new EcommerceContext())
-            {
-                var addedEntity = context.Entry(adminOperationClaim);
-                addedEntity.State = EntityState.Added;
-                context.SaveChanges();
-                return new SuccessResult(ClaimMessages.ClaimAdded);
-            }
-        }
-
         public IResult Delete(AdminOperationClaim adminOpetationClaim)
         {
             _claimDal.Delete(adminOpetationClaim);

@@ -19,7 +19,7 @@ namespace Entities.DTOs
         public string? Description { get; set; }
         public string? ColorName { get; set; }
         public DateTime Date { get; set; }
-        public int Price { get; set; }
+        public decimal Price { get; set; }
         public int Discount { get; set; }
         public string BasePic { get; set; }
     }
